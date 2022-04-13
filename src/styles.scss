@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~primeflex/primeflex.css';
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/lara-light-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
 
 body{
     font-family: 'Lato', sans-serif;
@@ -23,7 +27,7 @@ a{
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px;  
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -32,15 +36,15 @@ a{
     white-space: nowrap;
     direction: ltr;
   
-    /* Support for all WebKit browsers. */
+    /* Supporto per tutti i WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
+    /* Supporto per Safari e Chrome. */
     text-rendering: optimizeLegibility;
   
-    /* Support for Firefox. */
+    /* Supporto per Firefox. */
     -moz-osx-font-smoothing: grayscale;
   
-    /* Support for IE. */
+    /* Supporto per IE. */
     font-feature-settings: 'liga';
 }
 

@@ -3,7 +3,7 @@
 .movie-item{
     position: relative;
     display: block;
-    min-height: 325px;
+    min-height: 435px;
     border-radius: 5px;
     background-color: $bgColorLight;
     border: 1px solid $lightGray;
@@ -13,7 +13,7 @@
         img{
             width: 100%;
             border-radius: 5px;
-            height: 275px;
+            height: 375px;
             object-fit: cover;
         }
     }
@@ -34,10 +34,11 @@
         }
     }
 
-    &-title{
+    &-title h3{
         display: flex;
         align-items: center;
         font-weight: bold;
+        font-size: 1.1rem;
         margin: 0.5rem;
         height: 30px;
 
