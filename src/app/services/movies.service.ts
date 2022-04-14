@@ -24,6 +24,13 @@ export class MoviesService {
       }));
   }
 
+  getSimilarMovie(id: string){
+    return this.http.get<MovieDto>(
+      `${this.baseUrl}/movie/${id}/similar?api_key=${this.apikey}`).pipe(switchMap( res =>{
+        return of (res.results)
+      }))
+  }
+
   searchMovies(page: number){
     return this.http.get<MovieDto>(
       `${this.baseUrl}/movie/popular?page=${page}&api_key=${this.apikey}&language=it-IT`).pipe(switchMap(res =>{
@@ -56,10 +63,7 @@ export class MoviesService {
     )
   }
 
-  getSimilarMovie(id: string){
-    return this.http.get<Movie>(
-      `${this.baseUrl}/movie/${id}/similar?api_key=${this.apikey}`)
-  }
+
 
 
 

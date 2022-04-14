@@ -16,7 +16,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   movieVideos: MovieVideo[] = [];
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
-  similarMovies: Movie | null = null;
+  similarMovies: Movie[] = [];
   imagesSizes = IMAGE_SIZES;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { }
