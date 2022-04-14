@@ -1,0 +1,55 @@
+@import '../../../styles/colors';
+
+
+.poster{
+    width: 100%;
+}
+
+
+.overview{
+    line-height: 1.5rem;
+}
+
+.stat{
+    display: flex;
+    margin-bottom: 15px;
+
+    .label{
+        width: 150px;
+    }
+
+    .value{
+        color:  $primaryColor;
+        font-weight: bold;
+    }
+}
+
+.btnWrapper{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+
+
+    button{
+        margin: 10px;
+        transform: 0.6s;
+
+        &:hover{
+            color: $lightGray;
+        }
+    }
+}
+
+
+.actor{
+    padding: 10px;
+    img{
+        width: 100%;
+    }
+
+    span{
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+}

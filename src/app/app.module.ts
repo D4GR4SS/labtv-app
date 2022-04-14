@@ -13,6 +13,15 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { ItemComponent } from './components/item/item.component';
 import { PaginatorModule } from 'primeng/paginator';
+import {TabViewModule} from 'primeng/tabview';
+
+import { MovieComponent } from './pages/movie/movie.component';
+import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import {ImageModule} from 'primeng/image';
+import {ButtonModule} from 'primeng/button';
+import {CarouselModule} from 'primeng/carousel';
+
+
 
 
 
@@ -26,14 +35,22 @@ import { PaginatorModule } from 'primeng/paginator';
     MoviesComponent,
     SliderComponent,
     ItemsBannerComponent,
-    ItemComponent
+    ItemComponent,
+    MovieComponent,
+    VideoEmbedComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    PaginatorModule
+    PaginatorModule,
+    TabViewModule,
+    ImageModule,
+    ButtonModule,
+    CarouselModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

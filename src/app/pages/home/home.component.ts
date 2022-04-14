@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
     });
     
-    this.moviesService.getMovies('upcoming').subscribe((movies)=>{
+    this.moviesService.getMovies('now_playing').subscribe((movies)=>{
       this.upcomingMovies = movies;
       
     });   
