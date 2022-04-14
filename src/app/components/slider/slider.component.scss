@@ -87,5 +87,21 @@
         }
       }
     }
+}
+
+
+@media  (max-width:450px) {
+
+  .desc{
+    
+      p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%
+      }
+    
   }
+  
+}
   

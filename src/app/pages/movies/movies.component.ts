@@ -10,22 +10,36 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MoviesComponent implements OnInit {
 
   movies: Movie [] = [];
+  searchValue: string | null = null;
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
+
     this.getPagedMovies(1);
   }
 
-  getPagedMovies(page: number){
-    this.moviesService.searchMovies(page).subscribe(movies =>{
+  getPagedMovies(page: number, searcKeyword?: string){
+    this.moviesService.searchMovies(page, searcKeyword).subscribe(movies =>{
       this.movies = movies;
     })
   }
 
   paginate(event: any){
-    console.log(event);
-    this.getPagedMovies(event.page +1);
+    const pageNumber = event.page +1;
+    if(this.searchValue){
+      this.getPagedMovies(pageNumber, this.searchValue);
+    } else {
+      this.getPagedMovies(pageNumber);
+    }
+
+    // this.getPagedMovies(event.page +1);
+  }
+
+  searchChanged(){
+    if(this.searchValue){
+      this.getPagedMovies(1, this.searchValue);
+    }
   }
 
 }

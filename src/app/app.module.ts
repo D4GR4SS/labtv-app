@@ -20,6 +20,7 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
 import {ImageModule} from 'primeng/image';
 import {ButtonModule} from 'primeng/button';
 import {CarouselModule} from 'primeng/carousel';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -49,8 +50,8 @@ import {CarouselModule} from 'primeng/carousel';
     TabViewModule,
     ImageModule,
     ButtonModule,
-    CarouselModule
-    
+    CarouselModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
