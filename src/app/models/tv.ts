@@ -1,5 +1,6 @@
 import { Movie } from './movie';
 
+
 export interface Tv extends Movie {}
 
 export interface TvDto {
@@ -8,3 +9,29 @@ export interface TvDto {
   total_results: number;
   total_pages: number;
 }
+
+
+export interface TvVideoDto {
+  id: number;
+  results: TvVideo[];
+}
+
+export interface TvVideo {
+  site: string;
+  key: string;
+}
+
+export interface TvImages {
+  backdrops: {
+    file_path: string;
+  }[];
+}
+
+export interface TvCredits {
+  cast: {
+    name: string;
+    profile_path: string;
+  }[];
+}
+
+

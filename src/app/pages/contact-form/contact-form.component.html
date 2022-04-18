@@ -1,0 +1,36 @@
+<main class="body">
+<form [formGroup]="exform">
+    <div class="title">    
+        <h2>CONTATTI</h2>
+    </div>
+
+    <div class="half">
+        <div class="element">
+            <label for="name">NOME</label>
+            <input formControlName="name"
+            name="name"
+            type="text" id="name">
+            <small *ngIf="name?.invalid && name?.touched"
+            class="alert">Inserire un nome valido</small>
+        </div>
+        <div class="element">
+            <label for="email">EMAIL</label>
+            <input formControlName="email" 
+            type="text" id="email">
+            <small *ngIf="email?.invalid && email?.touched"
+            class="alert">Inserire una mail valida</small>
+        </div>
+    </div>
+    <div class="full">
+        <label for="comment">MESSAGGIO</label>
+        <textarea  formControlName="message"
+         id="comment" cols="30" rows="10"></textarea>
+         <small *ngIf="message?.invalid && message?.touched"
+         class="alert">Inserire un messaggio valida (minimo 20 caratteri)</small>
+        </div>
+    <div class="action">
+        <button (click)="clicksub()" class="submit" [disabled]="!exform.valid || exform.pristine">INVIO</button>
+        <button class="reset">ANNULLA</button>
+    </div>
+</form>
+</main>
