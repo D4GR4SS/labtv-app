@@ -1,37 +1,63 @@
-<main class="body">
-    <form>
+<div class="flex">
+<main class="left">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="title">
             <h2>Registrati</h2>
       </div>
       <div class="half">
         <div class="element">
             <label for="firstName">nome</label>
-            <input type="text" placeholder="" id="firstName" name="firstName">
-            <small class="alert">Nome non valido</small>
+            <input type="text" placeholder="" id="firstName" name="firstName" formControlName="firstName">
+            <small class="alert" *ngIf="registerForm.controls['firstName'].dirty && registerForm.hasError('required', 'firstName')">Nome non valido</small>
         </div>
         <div class="element">
             <label for="lastName">cognome</label>
-            <input type="text" placeholder="" id="lastName" name="lastName">
-            <small class="alert">Nome non valido</small>
+            <input type="text" placeholder="" id="lastName" name="lastName" formControlName="lastName">
+            <small class="alert" *ngIf="registerForm.controls['lastName'].dirty && registerForm.hasError('required', 'lastName')">Cognome non valido</small>
+        </div>
+        <div class="element">
+            <label for="email">email</label>
+            <input type="text" placeholder="" id="email" name="email" formControlName="email">
+            <small class="alert" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required', 'email')">Email non valida</small>
         </div>
         <div class="element">
             <label for="password">password</label>
-            <input  type="password" placeholder="" id="password" name="password">
-            <small class="alert">Password non valido</small>
+            <input  type="password" placeholder="" id="password" name="password" formControlName="password">
+            <small class="alert" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required', 'firstName')">Password non valido</small>
         </div>
         <div class="element">
             <label for="confirmPassword">conferma password</label>
-            <input  type="password" placeholder="" id="confirmPassword" name="confirmPassword">
-            <small class="alert">Password non valido</small>
+            <input  type="password" placeholder="" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
+            <small class="alert" *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('required', 'confirmPassword')">Password non valido</small>
         </div>
-        <div class="element">
-            <input type="checkbox" name="" id=""><a><p>Accettto i Termini & Condizioni d'uso.</p></a>
+        <div class="checkbox" formControlName="checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox"><a href="">Accettto i Termini & Condizioni d'uso.</a>
         </div>
       </div>
       <div class="full">
         <div class="action">
-            <button>Accedi</button>
+            <button type="submit" [disabled]="!registerForm.valid">Accedi</button>
         </div>        
      </div>
     </form>
 </main>
+
+
+<aside class="right">
+    <div class="box">
+        <h3>Multiple devices</h3>
+        <span class="app-icon">devices</span>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi vitae, dolorem soluta in labore facilis! Minima inventore porro doloribus cupiditate aspernatur, beatae nobis labore velit placeat adipisci quod sed doloremque.</p>
+    </div>
+    <div class="box">
+        <h3>Pagamento sicuro</h3>
+        <span class="app-icon">credit_card</span>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi vitae, dolorem soluta in labore facilis! Minima inventore porro doloribus cupiditate aspernatur, beatae nobis labore velit placeat adipisci quod sed doloremque.</p>
+    </div>
+    <div class="box">
+        <h3>Film & Serie TV</h3>
+        <span class="app-icon">theater_comedy</span>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi vitae, dolorem soluta in labore facilis! Minima inventore porro doloribus cupiditate aspernatur, beatae nobis labore velit placeat adipisci quod sed doloremque.</p>
+    </div>
+</aside>
+</div>

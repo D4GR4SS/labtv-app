@@ -1,0 +1,209 @@
+@import '../../../styles/colors';
+
+.flex{
+    display: flex;
+    background: rgb(20,20,20);
+    background: linear-gradient(45deg, rgba(20,20,20,1) 0%, rgba(33,33,33,1) 60%, rgba(21,19,41,1) 100%);
+}
+
+#password.ng-touched.ng-invalid {
+    border: 2px solid $red;
+}
+#password.ng-touched.ng-valid {
+    border:2px solid $primaryColor;
+}
+
+#email.ng-touched.ng-invalid {
+    border: 2px solid $red;
+}
+#email.ng-touched.ng-valid {
+    border:2px solid $primaryColor;
+}
+
+#firstName.ng-touched.ng-invalid {
+    border: 2px solid $red;
+}
+#firstName.ng-touched.ng-valid {
+    border:2px solid $primaryColor;
+}
+
+#lastName.ng-touched.ng-invalid {
+    border: 2px solid $red;
+}
+#lastName.ng-touched.ng-valid {
+    border:2px solid $primaryColor;
+}
+
+#confirmPassword.ng-touched.ng-invalid {
+    border: 2px solid $red;
+}
+#confirmPassword.ng-touched.ng-valid {
+    border:2px solid $primaryColor;
+}
+
+
+.right{
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .box{
+        text-align: center;
+        width: 50%;
+        border-bottom: 1px solid $lightGray;
+        margin: auto;
+
+        h3{
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        span{
+            color: $primaryColor;
+            font-size: 2rem;
+        }
+    }
+}
+
+.left {
+    flex:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    
+    form{
+        background: rgba($color: $bgColorLight, $alpha: 0.5);
+        min-width: 80%;
+        margin: 50px;
+        border-radius: 4px;
+        padding: 55px 30px;  
+        transition: ease-out 0.3;
+        box-shadow: 5px 5px 10px 1px $bgColor;
+        
+    }
+
+    .title h2{
+        letter-spacing: 6px;
+        border-bottom: 1px solid $white;
+        display: inline-block;
+        padding-bottom: 8px;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+    }
+
+    .half{
+        display: flex;
+        flex-direction: column;
+
+        .element{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+
+            input{
+                border-radius: 4px;
+                border: 1px solid $white;
+                outline: 0;
+                padding: 1rem;
+                width: 100%;
+                height: 44px;
+                background: transparent;
+                font-size: 1.2rem;
+                color: $white;
+                
+            }           
+        }
+
+        label{
+            display: block;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+
+        }
+    }
+
+    button{
+        color: $lightGray;
+        margin-bottom: 32px;
+        border-radius: 4px;
+        border: 1px solid $white;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        outline: 0;
+        padding: 1rem 1.4rem;
+        width: 100%; 
+        text-transform: uppercase;
+
+        &:focus, &:hover{
+            opacity: 0.9;
+            outline: 0;    
+        }
+
+    }
+
+    .full{
+        margin-bottom: 24px;
+
+        a p:hover{
+            color: $primaryColor;
+        }
+
+        button{
+            background-color: $bgColorLight;
+        }
+    }
+
+
+.checkbox{
+    margin: 24px 0;
+    a{ margin: 0 10px; }    
+}
+
+}
+
+@media  (max-width:1025px) {
+
+    .flex{
+        flex-direction: column;
+    }
+
+    .right{
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .box{
+            border-bottom: none;
+        }
+
+        .box:nth-child(2){
+            margin: 0 1.5rem;
+        }
+    }
+    
+}
+
+@media screen and (max-width:480px) {
+
+    .right{
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .box{
+            border-bottom: 1px solid $lightGray;
+        }
+
+        .box:nth-child(2){
+            margin: 0 1.5rem;
+        }
+    }
+    
+    
+}

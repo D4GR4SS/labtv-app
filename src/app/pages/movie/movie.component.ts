@@ -59,7 +59,7 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   getSimilarMovies(id: string){
     this.moviesService.getSimilarMovie(id).subscribe(similarMoviesData => {
-      this.similarMovies = similarMoviesData
+      this.similarMovies = similarMoviesData;
       console.log(similarMoviesData)
     } )
   }

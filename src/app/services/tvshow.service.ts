@@ -13,10 +13,10 @@ export class TvshowService {
   baseUrl: string = 'https://api.themoviedb.org/3';
   apikey: string = '95a239540835902f14accd4ba073e2fd';
 
-  getTvs(type: string = 'latest', count: number = 12) {
-    return this.http.get<TvDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apikey}&language=it`).pipe(
+  getTvs(type: string = 'top_rated', count: number = 24) {
+    return this.http.get<TvDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apikey}&language=it-IT&region=IT`).pipe(
       switchMap((res) => {
-        return of(res.results.slice(0, count));
+        return of(res.results.slice(13, count));
       })
     );
   }

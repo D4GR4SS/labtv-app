@@ -1,25 +1,25 @@
 <main class="body">
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="title">
             <h2>Accedi</h2>
       </div>
       <div class="half">
         <div class="element">
-            <label for="name">nome</label>
-            <input type="text" placeholder="" id="name" name="name">
-            <small class="alert">Nome non valido</small>
+            <label for="email">email</label>
+            <input type="text" placeholder="" id="email" name="email" formControlName="email">
+            <small class="alert"  *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">Email non valido</small>
         </div>
         <div class="element">
             <label for="password">password</label>
-            <input  type="password" placeholder="" id="password" name="password">
-            <small class="alert">Password non valido</small>
+            <input  type="password" placeholder="" id="password" name="password" formControlName="password">
+            <small class="alert" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">Password non valido</small>
         </div>
         <div class="action">
-            <button>Accedi</button>
+            <button type="submit" [disabled]="!loginForm.valid">Accedi</button>
         </div>
       </div>
       <div class="full">
-            <p><a routerLink="">Hai dimenticato la password?</a></p>
+            <a routerLink="">Hai dimenticato la password?</a>
             <hr>
             <p>Entra nel mondo di LabTv: Film sempre nuovi, le Serie TV e gli Show più attesi!</p>
             <div class="action">

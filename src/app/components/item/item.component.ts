@@ -13,6 +13,7 @@ export class ItemComponent implements OnInit {
 
   imagesSizes = IMAGE_SIZES;
 
+
   constructor() { }
 
   ngOnInit(): void {

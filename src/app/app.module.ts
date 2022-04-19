@@ -24,7 +24,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import { TvShowComponent } from './pages/tv-show/tv-show.component';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { ContactFormComponent } from './pages/contact-form/contact-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { RegisterComponent } from './pages/register/register.component';
 
@@ -63,7 +63,8 @@ import { RegisterComponent } from './pages/register/register.component';
     ButtonModule,
     CarouselModule,
     InputTextModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

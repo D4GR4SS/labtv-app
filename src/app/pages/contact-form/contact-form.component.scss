@@ -116,14 +116,14 @@ form button{
 
    
 #name.ng-touched.ng-invalid {
-    border: 2px solid #fa3131cc;
+    border: 2px solid $red;
 }
 #name.ng-touched.ng-valid {
     border:2px solid $primaryColor;
 }
 
 #email.ng-touched.ng-invalid {
-    border: 2px solid #fa3131cc;
+    border: 2px solid $red;
 }
 #email.ng-touched.ng-valid {
     border:2px solid $primaryColor;

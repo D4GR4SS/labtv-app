@@ -24,11 +24,14 @@ export class MoviesService {
       }));
   }
 
-  getSimilarMovie(id: string){
-    return this.http.get<MovieDto>(
-      `${this.baseUrl}/movie/${id}/similar?api_key=${this.apikey}`).pipe(switchMap( res =>{
-        return of (res.results)
-      }))
+  getSimilarMovie(id: string) {
+    return this.http
+      .get<MovieDto>(`${this.baseUrl}/movie/${id}/similar?api_key=${this.apikey}`)
+      .pipe(
+        switchMap((res) => {
+          return of(res.results.slice(0, 12));
+        })
+      );
   }
 
   searchMovies(page: number, searchValue?: string){
