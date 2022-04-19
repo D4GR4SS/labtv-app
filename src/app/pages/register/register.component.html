@@ -30,8 +30,8 @@
             <input  type="password" placeholder="" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword">
             <small class="alert" *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('required', 'confirmPassword')">Password non valido</small>
         </div>
-        <div class="checkbox" formControlName="checkbox">
-            <input type="checkbox" name="checkbox" id="checkbox"><a href="">Accettto i Termini & Condizioni d'uso.</a>
+        <div class="checkbox" >
+            <input type="checkbox" name="checkbox" id="checkbox" formControlName="checkbox"><a href="">Accettto i Termini & Condizioni d'uso.</a>
         </div>
       </div>
       <div class="full">
