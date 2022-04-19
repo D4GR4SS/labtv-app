@@ -16,7 +16,7 @@ export class MoviesService {
   
   constructor(private http: HttpClient) { }
 
-  getMovies(type: string = 'upcoming', count: number = 12){
+  getMovies(type: string = 'upcoming', count: number = 18){
     
     return this.http.get<MovieDto>(
       `${this.baseUrl}/movie/${type}?api_key=${this.apikey}&language=it-IT`).pipe(switchMap(res =>{
@@ -24,12 +24,12 @@ export class MoviesService {
       }));
   }
 
-  getSimilarMovie(id: string) {
+  getSimilarMovie(id: string, count: number = 12) {
     return this.http
       .get<MovieDto>(`${this.baseUrl}/movie/${id}/similar?api_key=${this.apikey}`)
       .pipe(
         switchMap((res) => {
-          return of(res.results.slice(0, 12));
+          return of(res.results.slice(0, count));
         })
       );
   }
@@ -51,7 +51,7 @@ export class MoviesService {
   getMovieVideos(id: string){
     return this.http.get<MovieVideoDto>(
       `${this.baseUrl}/movie/${id}/videos?api_key=${this.apikey}`).pipe(switchMap(res =>{
-        return of(res.results.slice(0, 1))
+        return of(res.results.slice(1, 2))
       }));
   }
 

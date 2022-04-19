@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
       this.topRatedMovies = movies;
     });
 
-    this.moviesService.getTvs('popular').subscribe((tvShows) => {
+    this.moviesService.getTvs('top_rated').subscribe((tvShows) => {
       this.popularTvShows = tvShows;
     });
 

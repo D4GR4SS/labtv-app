@@ -1,76 +1,190 @@
 @import '../../../styles/colors';
 
-header {
-    .navbar {
+// header {
+//     .navbar {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: space-between;
+//       padding: 0.5rem 1rem;
+//       height: 65px;
+//       background-color: $bgColorLight;
+//       margin: 0;
+//       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+//       &-logo {
+//         display: block;
+//         img {
+//           width: 30px;
+//         }
+//       }
+  
+//       &-links {
+//         display: block;
+//         padding: 0;
+//         margin: 0;
+//         list-style: none;
+//         li {
+//           display: inline;
+//           margin-right: 15px;
+//             &:hover{
+//                 font-weight: 800;
+//                 border-bottom: 3px solid $primaryColor;
+//             }
+//         }
+//       }
+//     } 
+// }
+
+
+
+
+.navbar {
+  margin: 0;
+  padding: 1rem 0.5rem;
+   background-color: $bgColorLight;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &-toggle {
+    position: absolute;
+    cursor: pointer;
+    margin: 0 1rem;
+    right: 0;
+
+    span{
+      width: 1.5rem;
+      font-size: 40px;
+      color: $lightGray;
+    }
+
+    #close {
+      display: none;
+    }
+  }
+
+  &-checkbox {
+    display: none;
+  }
+
+ 
+
+    img{
+      width: 100px;
+    }
+  
+  &-menu {
       display: flex;
       flex-direction: column;
+      gap: 2rem;
       align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
-      height: 65px;
-      background-color: $bgColorLight;
       margin: 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-      &-logo {
-        display: block;
-        img {
-          width: 30px;
-        }
+      padding: 0;
+
+      li {
+          list-style: none;
+          display: none;
+
+          &:first-child {
+              margin-right: auto;
+              display: block;
+          }
       }
-  
-      &-links {
-        display: block;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        li {
-          display: inline;
-          margin-right: 15px;
-            &:hover{
+
+      a {
+          text-decoration: none;
+          padding: 0;
+          margin: 0;
+          transition: ease-in 0.3ms;
+
+
+          &:hover {
                 font-weight: 800;
                 border-bottom: 3px solid $primaryColor;
-            }
-        }
+          }
+
+
+
       }
-    } 
+
+  }
+
+
+
+.navbar-checkbox:checked~ul.navbar-menu li {
+  display: block;
+}
+
+.navbar-checkbox:checked~label.navbar-toggle #close {
+  display: block;
+}
+
+.navbar-checkbox:checked~label.navbar-toggle #menu {
+  display: none;
+}
+
+
 }
 
 
 
-@media only screen and (min-width:460px){
-    header {
-        .navbar {
-          display: flex;
+
+@media only screen and (min-width:768px) {
+  .navbar {
+    height: 64px;
+    margin: 0;
+    padding: 1rem 0.5rem;
+
+
+      &-toggle {
+          display: none;
+      }
+
+      &-menu {
           flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0.5rem 1rem;
-          height: 65px;
-          background-color: $bgColorLight;
           margin: 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      
-          &-logo {
-            display: block;
-            img {
-              width: 50px;
-            }
+          padding: 0;
+
+          li {
+              display: block;
           }
-      
-          &-links {
-            display: block;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            li {
-              display: inline;
-              margin-right: 15px;
-            }
-          }
-        } 
-    }
-    
+      }
+  }
 
 }
 
+
+
+
+// @media only screen and (min-width:460px){
+//     header {
+//         .navbar {
+//           display: flex;
+//           flex-direction: row;
+//           align-items: center;
+//           justify-content: space-between;
+//           padding: 0.5rem 1rem;
+//           height: 65px;
+//           background-color: $bgColorLight;
+//           margin: 0;
+//           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      
+//           &-logo {
+//             display: block;
+//             img {
+//               width: 50px;
+//             }
+//           }
+      
+//           &-links {
+//             display: block;
+//             padding: 0;
+//             margin: 0;
+//             list-style: none;
+//             li {
+//               display: inline;
+//               margin-right: 15px;
+//             }
+//           }
+//         } 
+//     }
+// }
