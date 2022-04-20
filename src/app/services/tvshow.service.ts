@@ -22,7 +22,7 @@ export class TvshowService {
   }
 
   searchTvShow(page: number, searchValue?: string){
-    const uri = searchValue ? '/search/tv' : '/tv/popular'
+    const uri = searchValue ? '/search/tv' : '/tv/top_rated'
     return this.http.get<TvDto>(
       `${this.baseUrl}${uri}?page=${page}&query=${searchValue}&api_key=${this.apikey}&language=it`).pipe(switchMap(res =>{
         return of(res.results)

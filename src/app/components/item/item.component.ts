@@ -10,6 +10,7 @@ import { IMAGE_SIZES } from '../../constants/image-size';
 export class ItemComponent implements OnInit {
   
   @Input() itemData: Movie | null = null;
+  
 
   imagesSizes = IMAGE_SIZES;
 

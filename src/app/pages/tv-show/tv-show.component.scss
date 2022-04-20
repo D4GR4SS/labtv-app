@@ -1,0 +1,66 @@
+@import '../../../styles/colors';
+
+
+.poster{
+    width: 100%;
+}
+
+
+.overview{
+    line-height: 1.5rem;
+}
+
+.stat{
+    display: flex;
+    margin-bottom: 15px;
+
+    .label{
+        width: 150px;
+    }
+
+    .value{
+        color:  $primaryColor;
+        font-weight: bold;
+    }
+}
+
+.btnWrapper{
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+
+
+    button{
+        margin: 10px;
+        box-shadow: 0 4px 0 $lightGray, 0 5px 15px -4px #000;
+
+        transition: all 0.5;
+
+
+        &:hover,&:focus{
+            opacity: 0.9;
+            outline: 0;       
+        }
+        
+
+        &:active{
+            box-shadow: none;
+            margin-bottom: 6px;
+
+        }
+    }    
+}
+
+
+.actor{
+    padding: 10px;
+    img{
+        width: 100%;
+    }
+
+    span{
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+}

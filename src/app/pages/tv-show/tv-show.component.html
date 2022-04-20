@@ -5,7 +5,7 @@
         <p-tabPanel header="Scheda">
             <div class="grid">
                 <div class="col-12 md:col-3 lg:col-3">
-                    <img class="poster" [src]="imagesSizes.medium + tvShow.poster_path" [alt]="tvShow.title">
+                    <img class="poster" [src]="imagesSizes.medium + tvShow.poster_path" [alt]="tvShow.name">
                 </div>
                 <div class="col-9 md:col-9 lg:col-">
                     <h2>{{tvShow.name}}</h2>
@@ -13,26 +13,17 @@
 
                     <div class="stat">
                         <div class="label">Data di Uscita:</div>
-                        <div class="value">
-                        </div>
+                        <div class="value">{{tvShow.first_air_date | date: 'dd.MM.yyyy'}} </div>
                     </div>
                     <div class="stat">
                         <div class="label">Titolo originale:</div>
-                        <div class="value">
-
-                        </div>
+                        <div class="value">{{tvShow.original_name}} </div>
                     </div>
                     <div class="stat">
                         <div class="label">Lingua originale:</div>
-                        <div class="value">
-                        </div>                 
+                        <div class="value">{{tvShow.original_language}}</div>                 
                     </div>
-                    <div class="stat">
-                        <div class="label">Durata:</div>
-                        <div class="value">
 
-                        </div>
-                    </div>
                     <div class="stat">
                         <div class="label">Genere:</div>
                         <div class="value">
@@ -42,13 +33,9 @@
                         </div>
                     </div>
                     <div class="btnWrapper">
-                        <button pButton type="button" class="p-button-raised p-button-rounded"><span class="app-icon"> play_arrow </span></button>
-                        <button pButton type="button" class="p-button-raised p-button-rounded"><span class="app-icon"> playlist_add </span></button>
+                        <button pButton type="button" class="p-button-raised p-button-rounded">Play<span class="app-icon"> play_arrow </span></button>
+                        <button pButton type="button" class="p-button-raised p-button-rounded">Aggiungi<span class="app-icon"> add </span></button>
                     </div>
-
-
-
-
                 </div>
             </div>
         </p-tabPanel>

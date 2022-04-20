@@ -19,7 +19,7 @@ export class MoviesService {
   getMovies(type: string = 'upcoming', count: number = 18){
     
     return this.http.get<MovieDto>(
-      `${this.baseUrl}/movie/${type}?api_key=${this.apikey}&language=it-IT`).pipe(switchMap(res =>{
+      `${this.baseUrl}/movie/${type}?api_key=${this.apikey}&language=it-IT&region=IT`).pipe(switchMap(res =>{
         return of(res.results.slice(0, count))
       }));
   }
