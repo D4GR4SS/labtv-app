@@ -30,7 +30,8 @@
         </div>
     <div class="action">
         <button (click)="clicksub()" class="submit" [disabled]="!exform.valid || exform.pristine">INVIO</button>
-        <button class="reset">ANNULLA</button>
+        <button (click)="reset()"
+        class="reset">ANNULLA</button>
     </div>
 </form>
 </main>

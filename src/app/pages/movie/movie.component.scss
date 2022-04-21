@@ -64,3 +64,24 @@
         margin: 10px 0;
     }
 }
+
+
+.trailer{
+    height: 70vh;
+}
+
+@media screen and (max-width:480px) {
+    .trailer{
+        height: 20vh;
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+    .trailer{
+        height: 30vh;
+    }
+    
+}
+
+

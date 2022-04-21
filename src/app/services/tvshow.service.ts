@@ -37,7 +37,7 @@ export class TvshowService {
 
   getTvShowsVideos(id: string){
     return this.http.get<TvVideoDto>(
-      `${this.baseUrl}/tv/${id}/videos?api_key=${this.apikey}`).pipe(switchMap(res =>{
+      `${this.baseUrl}/tv/${id}/videos?api_key=${this.apikey}&include_video_language=it`).pipe(switchMap(res =>{
         return of(res.results.slice(0, 1))}));
   }
 

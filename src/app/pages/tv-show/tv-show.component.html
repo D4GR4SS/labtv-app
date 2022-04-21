@@ -40,10 +40,10 @@
             </div>
         </p-tabPanel>
         <p-tabPanel header="Trailer">
-            <div class="grid">
+            <div class="trailer">
 
             <ng-container *ngFor="let tvVideo of tvVideos">
-                <div class="col-6 col-offset-3"> <app-video-embed [key]="tvVideo.key" [site]="tvVideo.site"></app-video-embed></div>
+                <div class="col-8 col-offset-2 h-full"> <app-video-embed [key]="tvVideo.key" [site]="tvVideo.site"></app-video-embed></div>
             </ng-container>
         </div>
         </p-tabPanel>

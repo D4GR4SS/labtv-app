@@ -23,6 +23,10 @@ export class ContactFormComponent implements OnInit {
 
   }
 
+  reset(){
+    this.exform.reset();
+  }
+
   clicksub(){
     console.log(this.exform.value);
     this.exform.reset();

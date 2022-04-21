@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
       password: new FormControl(null, [
         Validators.required,
         Validators.minLength(6),
-        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/),
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,}$/),
       ]),
       confirmPassword: new FormControl(null, [
         Validators.required,
@@ -43,8 +44,15 @@ export class RegisterComponent implements OnInit {
     }, passwordMatchingValidatior)}
 
 
-  onSubmit(){
+  signUp(){
     console.log(this.registerForm.value);
+    this.http.post<any>("http://localhost:3000/users", this.registerForm.value)
+    .subscribe(res=>{
+    alert('Registrazione avvenuta correttamente. Benvenuto!');
+    this.registerForm.reset();
+    this.router.navigate(['log-in']);
+    })
+
   }
 
 }
