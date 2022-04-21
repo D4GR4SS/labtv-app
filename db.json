@@ -1,4 +1,15 @@
 {
-  "users": [],
-  "posts": []
+  "users": [
+    {
+      "email": "davide@gr.me",
+      "password": "$2a$10$kKaiAuqtaC.19./kmDPD.urvLMzlr8KYr1kWnunwEOU7jSEYLNDKS",
+      "id": 1
+    }
+  ],
+  "posts": [
+    {
+      "prova": "daje"
+    }
+  ],
+  "film-acquistati": []
 }
