@@ -78,11 +78,14 @@
       gap: 2rem;
       align-items: center;
       margin: 0;
-      padding: 0;
+      padding: 0; 
+      
 
       li {
+
           list-style: none;
           display: none;
+
           border-bottom: 1px solid $lightGray;
 
           &:first-child {
