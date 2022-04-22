@@ -36,7 +36,7 @@
       </div>
       <div class="full">
         <div class="action">
-            <button type="submit" [disabled]="!registerForm.valid">Accedi</button>
+            <button type="submit" [disabled]="!registerForm.valid || registerForm.pristine">Accedi</button>
         </div>        
      </div>
     </form>

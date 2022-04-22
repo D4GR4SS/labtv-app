@@ -15,7 +15,7 @@
             <small class="alert" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">Password non valido</small>
         </div>
         <div class="action">
-            <button type="submit" [disabled]="!loginForm.valid">Accedi</button>
+            <button type="submit" [disabled]="!loginForm.valid || loginForm.pristine">Accedi</button>
         </div>
       </div>
       <div class="full">
